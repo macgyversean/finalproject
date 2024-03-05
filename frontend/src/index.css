@@ -16,7 +16,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+header {
+  background-color: #242424;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
 a {
   font-weight: 500;
   color: #646cff;
