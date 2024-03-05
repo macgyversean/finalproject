@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from db import session
 from models.User import Users
 
+
+
 app = FastAPI()
 
 origins = [
