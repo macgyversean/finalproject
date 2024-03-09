@@ -4,17 +4,15 @@ from db import engine
 from models.Base import Base
 
 class Users(Base):
-    __tablename__ = 'USERS'
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True,)
-    Name = Column(String)
-    Slug = Column(String)
-    Year_Served = Column(Integer)
+    email = Column(String)
+    Password = Column(String)
 
 class UsersSchema(BaseModel):
     id: int
-    Name: str
-    Slug: str
-    Year_Served: int
+    email: str
+    Password: str
 
 class Config:
     populate_by_name = True

@@ -2,7 +2,9 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from db import session
-from models.User import Users
+from models.User import Users, UsersSchema
+from models.Base import Base
+
 
 
 
@@ -33,3 +35,10 @@ def home():
 def get_users():
     user = session.query(Users)
     return user.all()
+
+@app.post("/createUsers")
+def create_user(user: UsersSchema):
+    user = Users(**user.dict())
+    session.add(user)
+    session.commit()
+    return user
